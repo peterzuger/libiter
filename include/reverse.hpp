@@ -42,7 +42,7 @@ namespace libiter{
             using reverse_iterator       = typename type::iterator;
             using const_reverse_iterator = typename type::const_iterator;
 
-            reverse(const T& other):val{other}{}
+            reverse(const type& other):val{other}{}
 
             constexpr iterator begin() noexcept{
                 return val.rbegin();
