@@ -1,7 +1,7 @@
 /**
  * @file   libiter/include/reverse.hpp
  * @author Peter Züger
- * @date   4.4.2019
+ * @date   04.04.2019
  * @brief  reverse iterators
  */
 #ifndef LIBITER_REVERSE_HPP

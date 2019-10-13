@@ -1,7 +1,7 @@
 /**
  * @file   libiter/test/reverse_test.cpp
- * @author Peter Zueger
- * @date   5.04.2019
+ * @author Peter Züger
+ * @date   05.04.2019
  * @brief  libiter::reverse tests
  */
 #include <reverse.hpp>

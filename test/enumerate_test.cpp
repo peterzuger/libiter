@@ -1,6 +1,6 @@
 /**
  * @file   libiter/test/enumerate_test.cpp
- * @author Peter Zueger
+ * @author Peter Züger
  * @date   17.04.2019
  * @brief  libiter::enumerate tests
  */

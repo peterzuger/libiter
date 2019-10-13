@@ -1,7 +1,7 @@
 /**
  * @file   libiter/include/enumerate.hpp
  * @author Peter Züger
- * @date   17.4.2019
+ * @date   17.04.2019
  * @brief  enumerate iterators
  */
 #ifndef LIBITER_ENUMERATE_HPP
