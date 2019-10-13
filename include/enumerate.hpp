@@ -22,8 +22,9 @@
 #ifndef LIBITER_ENUMERATE_HPP
 #define LIBITER_ENUMERATE_HPP
 
-#include "enumerate_iterator.hpp"
 #include <iterator>
+
+#include "enumerate_iterator.hpp"
 
 namespace libiter{
     namespace impl{

@@ -19,13 +19,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <enumerate.hpp>
-#include <iostream>
-#include <string>
 #include <array>
-#include <list>
 #include <deque>
+#include <iostream>
+#include <list>
 #include <sstream>
+#include <string>
+
+#include <enumerate.hpp>
 
 int main(){
     {
