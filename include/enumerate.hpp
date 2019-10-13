@@ -34,16 +34,16 @@ namespace libiter{
             type val;
 
         public:
-            using value_type             = typename type::value_type;
-            using pointer                = typename type::pointer;
-            using const_pointer          = typename type::const_pointer;
-            using reference              = typename type::reference;
-            using const_reference        = typename type::const_reference;
+            using value_type             = std::pair<std::size_t, typename type::value_type>;
+            using pointer                = value_type*;
+            using const_pointer          = const pointer;
+            using reference              = value_type&;
+            using const_reference        = const reference;
             using size_type              = typename type::size_type;
             using difference_type        = typename type::difference_type;
             using iterator               = enumerate_iterator<typename type::iterator>;
             using const_iterator         = const iterator;
-            using reverse_iterator       = enumerate_iterator<typename type::reverse_iterator>;
+            using reverse_iterator       = std::reverse_iterator<iterator>;
             using const_reverse_iterator = const reverse_iterator;
 
             enumerator(const T& other):val{other}{}
@@ -63,16 +63,16 @@ namespace libiter{
 
             // reverse iterators
             constexpr reverse_iterator rbegin() noexcept{
-                return reverse_iterator(val.rbegin(), std::distance(val.begin(), val.end()));
+                return reverse_iterator(end());
             }
             constexpr const_reverse_iterator rbegin() const noexcept{
-                return const_reverse_iterator(val.rbegin(), std::distance(val.begin(), val.end()));
+                return const_reverse_iterator(end());
             }
             constexpr reverse_iterator rend() noexcept{
-                return reverse_iterator(val.rend(), 0);
+                return reverse_iterator(begin());
             }
             constexpr const_reverse_iterator rend() const noexcept{
-                return const_reverse_iterator(val.rend(), 0);
+                return const_reverse_iterator(begin());
             }
 
             // const iterators

@@ -36,10 +36,10 @@ namespace libiter{
         public:
             using iterator_type     = Iterator;
             using iterator_category = typename std::iterator_traits<Iterator>::iterator_category;
-            using value_type        = typename std::iterator_traits<Iterator>::value_type;
+            using value_type        = std::pair<std::size_t, typename std::iterator_traits<Iterator>::value_type>;
             using difference_type   = typename std::iterator_traits<Iterator>::difference_type;
-            using pointer           = typename std::iterator_traits<Iterator>::pointer;
-            using reference         = typename std::iterator_traits<Iterator>::reference;
+            using pointer           = std::pair<std::size_t, typename std::iterator_traits<Iterator>::pointer>;
+            using reference         = std::pair<std::size_t, typename std::iterator_traits<Iterator>::reference>;
 
             constexpr enumerate_iterator():current{}, index{}{}
 
@@ -60,7 +60,7 @@ namespace libiter{
             }
 
             constexpr auto operator*() const{
-                return std::make_pair(index,*current);
+                return std::make_pair(index, *current);
             }
 
             constexpr enumerate_iterator& operator++(){
