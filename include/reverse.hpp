@@ -4,7 +4,7 @@
  * @date   04.04.2019
  * @brief  reverse iterators
  *
- * This file is part of libiter (https://gitlab.com/peterzuger/libcrypt).
+ * This file is part of libiter (https://gitlab.com/peterzuger/libiter).
  * Copyright (c) 2019 Peter Züger.
  *
  * This program is free software: you can redistribute it and/or modify
