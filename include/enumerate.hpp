@@ -35,7 +35,7 @@
 
 #include "enumerate_iterator.hpp"
 
-namespace libiter{
+namespace iter{
     namespace impl{
         template<typename T>
         class enumerator{

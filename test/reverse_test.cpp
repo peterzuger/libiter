@@ -2,7 +2,7 @@
  * @file   libiter/test/reverse_test.cpp
  * @author Peter Züger
  * @date   05.04.2019
- * @brief  libiter::reverse tests
+ * @brief  iter::reverse tests
  *
  * The MIT License (MIT)
  *
@@ -43,7 +43,7 @@ int main(){
         std::string output{"zyxwvutsrqponmlkjihgfedcba"};
 
         std::stringstream str;
-        for(const auto& i : libiter::reverse(txt))
+        for(const auto& i : iter::reverse(txt))
             str << i;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
@@ -56,7 +56,7 @@ int main(){
         std::string output{"zyxwvutsrqponmlkjihgfedcba"};
 
         std::stringstream str;
-        for(const auto& i : libiter::reverse(txt))
+        for(const auto& i : iter::reverse(txt))
             str << i;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
@@ -69,7 +69,7 @@ int main(){
         std::string output{"zyxwvutsrqponmlkjihgfedcba"};
 
         std::stringstream str;
-        for(const auto& i : libiter::reverse(txt))
+        for(const auto& i : iter::reverse(txt))
             str << i;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
@@ -82,7 +82,7 @@ int main(){
         std::string output{"zyxwvutsrqponmlkjihgfedcba"};
 
         std::stringstream str;
-        for(const auto& i : libiter::reverse(txt))
+        for(const auto& i : iter::reverse(txt))
             str << i;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){

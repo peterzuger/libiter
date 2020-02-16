@@ -31,7 +31,7 @@
 #ifndef LIBITER_REVERSE_HPP
 #define LIBITER_REVERSE_HPP
 
-namespace libiter{
+namespace iter{
     namespace impl{
         template<typename T>
         class reverse{

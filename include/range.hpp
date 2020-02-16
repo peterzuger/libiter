@@ -36,7 +36,7 @@
 
 #include "range_iterator.hpp"
 
-namespace libiter{
+namespace iter{
     template<int start, int stop, int step = 1>
     class range{
     public:

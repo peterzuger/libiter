@@ -33,7 +33,7 @@
 
 #include <iterator>
 
-namespace libiter{
+namespace iter{
     template<int start, int stop, int step>
     class range_iterator{
         int current;

@@ -34,7 +34,7 @@
 #include <iterator>
 #include <utility>
 
-namespace libiter{
+namespace iter{
     namespace impl{
         template<class Iterator>
         class enumerate_iterator{

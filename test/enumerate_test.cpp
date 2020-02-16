@@ -2,7 +2,7 @@
  * @file   libiter/test/enumerate_test.cpp
  * @author Peter Züger
  * @date   17.04.2019
- * @brief  libiter::enumerate tests
+ * @brief  iter::enumerate tests
  *
  * The MIT License (MIT)
  *
@@ -43,7 +43,7 @@ int main(){
         std::string output{"0a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z"};
 
         std::stringstream str;
-        for(auto&& [i, elem] : libiter::enumerate(txt))
+        for(auto&& [i, elem] : iter::enumerate(txt))
             str << i << elem;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
@@ -57,7 +57,7 @@ int main(){
         std::string output{"0a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z"};
 
         std::stringstream str;
-        for(auto&& [i, elem] : libiter::enumerate(txt))
+        for(auto&& [i, elem] : iter::enumerate(txt))
             str << i << elem;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
@@ -71,7 +71,7 @@ int main(){
         std::string output{"0a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z"};
 
         std::stringstream str;
-        for(auto&& [i, elem] : libiter::enumerate(txt))
+        for(auto&& [i, elem] : iter::enumerate(txt))
             str << i << elem;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
@@ -85,7 +85,7 @@ int main(){
         std::string output{"0a1b2c3d4e5f6g7h8i9j10k11l12m13n14o15p16q17r18s19t20u21v22w23x24y25z"};
 
         std::stringstream str;
-        for(auto&& [i, elem] : libiter::enumerate(txt))
+        for(auto&& [i, elem] : iter::enumerate(txt))
             str << i << elem;
         std::cout << str.str() << "\n" << output << "\n";
         if(str.str() != output){
