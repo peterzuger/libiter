@@ -50,12 +50,15 @@ namespace iter{
             using pointer           = std::pair<std::size_t, typename std::iterator_traits<Iterator>::pointer>;
             using reference         = std::pair<std::size_t, typename std::iterator_traits<Iterator>::reference>;
 
-            constexpr enumerate_iterator():current{}, index{}{}
+            constexpr enumerate_iterator():
+                current{}, index{}{}
 
-            constexpr enumerate_iterator(Iterator x, std::size_t i):current{x}, index{i}{}
+            constexpr enumerate_iterator(Iterator x, std::size_t i):
+                current{x}, index{i}{}
 
             template <class U>
-            constexpr enumerate_iterator(const enumerate_iterator<U>& u):current{u.current}, index{u.index}{}
+            constexpr enumerate_iterator(const enumerate_iterator<U>& u):
+                current{u.current}, index{u.index}{}
 
             template <class U>
             constexpr enumerate_iterator& operator=(const enumerate_iterator<U>& u){
@@ -64,11 +67,11 @@ namespace iter{
                 return *this;
             }
 
-            constexpr iterator_type base() const{
+            constexpr iterator_type base()const{
                 return current;
             }
 
-            constexpr auto operator*() const{
+            constexpr auto operator*()const{
                 return std::make_pair(index, *current);
             }
 
@@ -95,7 +98,7 @@ namespace iter{
                 return tmp;
             }
 
-            constexpr enumerate_iterator operator+ (difference_type n) const{
+            constexpr enumerate_iterator operator+ (difference_type n)const{
                 return enumerate_iterator(current + n, index + n);
             }
             constexpr enumerate_iterator& operator+=(difference_type n){
@@ -104,7 +107,7 @@ namespace iter{
                 return *this;
             }
 
-            constexpr enumerate_iterator operator- (difference_type n) const{
+            constexpr enumerate_iterator operator- (difference_type n)const{
                 return enumerate_iterator(current - n, index - n);
             }
             constexpr enumerate_iterator& operator-=(difference_type n){
@@ -113,7 +116,7 @@ namespace iter{
                 return *this;
             }
 
-            constexpr reference operator[](difference_type n) const{
+            constexpr reference operator[](difference_type n)const{
                 return *(*this + n);
             }
         };

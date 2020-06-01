@@ -47,9 +47,10 @@ namespace iter{
 
             static_assert(std::is_integral_v<T>, "iter::count_iterator<T> must be of integral type");
 
-            constexpr count_iterator(const value_type& v): value{v}{}
+            constexpr count_iterator(const value_type& v):
+                value{v}{}
 
-            constexpr value_type base() const{
+            constexpr value_type base()const{
                 return value;
             }
 
@@ -59,7 +60,7 @@ namespace iter{
                 return *this;
             }
 
-            constexpr auto operator*() const{
+            constexpr auto operator*()const{
                 return value;
             }
 
@@ -82,7 +83,7 @@ namespace iter{
                 return tmp;
             }
 
-            constexpr count_iterator operator+ (difference_type n) const{
+            constexpr count_iterator operator+ (difference_type n)const{
                 return count_iterator(value + n);
             }
             constexpr count_iterator& operator+=(difference_type n){
@@ -90,7 +91,7 @@ namespace iter{
                 return *this;
             }
 
-            constexpr count_iterator operator- (difference_type n) const{
+            constexpr count_iterator operator- (difference_type n)const{
                 return count_iterator(value - n);
             }
             constexpr count_iterator& operator-=(difference_type n){
@@ -98,7 +99,7 @@ namespace iter{
                 return *this;
             }
 
-            constexpr value_type operator[](difference_type n) const{
+            constexpr value_type operator[](difference_type n)const{
                 return *(*this + n);
             }
         };

@@ -51,46 +51,47 @@ namespace iter{
             using reverse_iterator       = typename type::iterator;
             using const_reverse_iterator = typename type::const_iterator;
 
-            reverse(const type& other):val{other}{}
+            reverse(const type& other):
+                val{other}{}
 
-            constexpr iterator begin() noexcept{
+            constexpr iterator begin()noexcept{
                 return val.rbegin();
             }
-            constexpr const_iterator begin() const noexcept{
+            constexpr const_iterator begin()const noexcept{
                 return val.rbegin();
             }
-            constexpr iterator end() noexcept{
+            constexpr iterator end()noexcept{
                 return val.rend();
             }
-            constexpr const_iterator end() const noexcept{
+            constexpr const_iterator end()const noexcept{
                 return val.rend();
             }
 
             // reverse iterators
-            constexpr reverse_iterator rbegin() noexcept{
+            constexpr reverse_iterator rbegin()noexcept{
                 return val.begin();
             }
-            constexpr const_reverse_iterator rbegin() const noexcept{
+            constexpr const_reverse_iterator rbegin()const noexcept{
                 return val.begin();
             }
-            constexpr reverse_iterator rend() noexcept{
+            constexpr reverse_iterator rend()noexcept{
                 return val.end();
             }
-            constexpr const_reverse_iterator rend() const noexcept{
+            constexpr const_reverse_iterator rend()const noexcept{
                 return val.end();
             }
 
             // const iterators
-            constexpr const_iterator cbegin() const noexcept{
+            constexpr const_iterator cbegin()const noexcept{
                 return crbegin();
             }
-            constexpr const_iterator cend() const noexcept{
+            constexpr const_iterator cend()const noexcept{
                 return crend();
             }
-            constexpr const_reverse_iterator crbegin() const noexcept{
+            constexpr const_reverse_iterator crbegin()const noexcept{
                 return cbegin();
             }
-            constexpr const_reverse_iterator crend() const noexcept{
+            constexpr const_reverse_iterator crend()const noexcept{
                 return cend();
             }
         };

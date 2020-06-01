@@ -51,46 +51,47 @@ namespace iter{
 
             static_assert(std::is_integral_v<T>, "iter::counter<T> must be of integral type");
 
-            counter(const value_type& s): start{s}{}
+            counter(const value_type& s):
+                start{s}{}
 
-            constexpr iterator begin() noexcept{
+            constexpr iterator begin()noexcept{
                 return iterator(start);
             }
-            constexpr const_iterator begin() const noexcept{
+            constexpr const_iterator begin()const noexcept{
                 return const_iterator(start);
             }
-            constexpr iterator end() noexcept{
+            constexpr iterator end()noexcept{
                 return iterator(std::numeric_limits<value_type>::max());
             }
-            constexpr const_iterator end() const noexcept{
+            constexpr const_iterator end()const noexcept{
                 return iterator(std::numeric_limits<value_type>::max());
             }
 
             // reverse iterators
-            constexpr reverse_iterator rbegin() noexcept{
+            constexpr reverse_iterator rbegin()noexcept{
                 return reverse_iterator(end());
             }
-            constexpr const_reverse_iterator rbegin() const noexcept{
+            constexpr const_reverse_iterator rbegin()const noexcept{
                 return const_reverse_iterator(end());
             }
-            constexpr reverse_iterator rend() noexcept{
+            constexpr reverse_iterator rend()noexcept{
                 return reverse_iterator(begin());
             }
-            constexpr const_reverse_iterator rend() const noexcept{
+            constexpr const_reverse_iterator rend()const noexcept{
                 return const_reverse_iterator(begin());
             }
 
             // const iterators
-            constexpr const_iterator cbegin() const noexcept{
+            constexpr const_iterator cbegin()const noexcept{
                 return cbegin();
             }
-            constexpr const_iterator cend() const noexcept{
+            constexpr const_iterator cend()const noexcept{
                 return cend();
             }
-            constexpr const_reverse_iterator crbegin() const noexcept{
+            constexpr const_reverse_iterator crbegin()const noexcept{
                 return crbegin();
             }
-            constexpr const_reverse_iterator crend() const noexcept{
+            constexpr const_reverse_iterator crend()const noexcept{
                 return crend();
             }
         };

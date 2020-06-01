@@ -50,16 +50,21 @@ namespace iter{
         static_assert(!(( stop - start ) % step),
                       "libiter::range_iterator: range must terminate (( stop - start ) % step)");
 
-        constexpr range_iterator():current{0}{}
-        constexpr range_iterator(value_type x):current{x}{}
-        constexpr range_iterator(const range_iterator<start, stop, step>& x):current{x.base()}{}
+        constexpr range_iterator():
+            current{0}{}
+
+        constexpr range_iterator(value_type x):
+            current{x}{}
+
+        constexpr range_iterator(const range_iterator<start, stop, step>& x):
+            current{x.base()}{}
 
         constexpr range_iterator& operator=(const range_iterator& u){
             current = u.base();
             return *this;
         }
 
-        constexpr value_type base() const{
+        constexpr value_type base()const{
             return current;
         }
         constexpr reference operator*(){
@@ -85,7 +90,7 @@ namespace iter{
             return tmp;
         }
 
-        constexpr range_iterator operator+ (difference_type n) const{
+        constexpr range_iterator operator+ (difference_type n)const{
             return range_iterator(current + ( n * step ));
         }
         constexpr range_iterator& operator+=(difference_type n){
@@ -93,7 +98,7 @@ namespace iter{
             return *this;
         }
 
-        constexpr range_iterator operator- (difference_type n) const{
+        constexpr range_iterator operator- (difference_type n)const{
             return range_iterator(current - (n * step));
         }
         constexpr range_iterator& operator-=(difference_type n){
@@ -101,7 +106,7 @@ namespace iter{
             return *this;
         }
 
-        constexpr value_type operator[](difference_type n) const{
+        constexpr value_type operator[](difference_type n)const{
             return n * step;
         }
     };
