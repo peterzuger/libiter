@@ -39,6 +39,7 @@ namespace iter{
         template<typename T>
         class count_iterator{
             T value;
+            T step;
 
         public:
             using iterator_category = std::random_access_iterator_tag;
@@ -47,8 +48,9 @@ namespace iter{
 
             static_assert(std::is_integral_v<T>, "iter::count_iterator<T> must be of integral type");
 
-            constexpr count_iterator(const value_type& v):
-                value{v}{}
+            constexpr count_iterator(const value_type& v, const value_type& s):
+                value{v},
+                step{s}{}
 
             constexpr value_type base()const{
                 return value;
@@ -57,6 +59,7 @@ namespace iter{
             template <class U>
             constexpr count_iterator& operator=(const count_iterator<U>& u){
                 value = u.value;
+                step = u.step;
                 return *this;
             }
 
@@ -65,42 +68,42 @@ namespace iter{
             }
 
             constexpr count_iterator& operator++(){
-                ++value;
+                value += step;
                 return *this;
             }
             constexpr count_iterator operator++(int){
                 count_iterator tmp(*this);
-                ++value;
+                value += step;
                 return tmp;
             }
             constexpr count_iterator& operator--(){
-                --value;
+                value -= step;
                 return *this;
             }
             constexpr count_iterator operator--(int){
                 count_iterator tmp(*this);
-                --value;
+                value -= step;
                 return tmp;
             }
 
             constexpr count_iterator operator+ (difference_type n)const{
-                return count_iterator(value + n);
+                return count_iterator(value + (n * step));
             }
             constexpr count_iterator& operator+=(difference_type n){
-                value += n;
+                value += (n * step);
                 return *this;
             }
 
             constexpr count_iterator operator- (difference_type n)const{
-                return count_iterator(value - n);
+                return count_iterator(value - (n * step));
             }
             constexpr count_iterator& operator-=(difference_type n){
-                value -= n;
+                value -= (n * step);
                 return *this;
             }
 
             constexpr value_type operator[](difference_type n)const{
-                return *(*this + n);
+                return *(*this + (n * step));
             }
         };
 

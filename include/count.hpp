@@ -41,6 +41,7 @@ namespace iter{
         template<typename T>
         class counter{
             T start;
+            T step;
 
         public:
             using value_type             = T;
@@ -51,20 +52,21 @@ namespace iter{
 
             static_assert(std::is_integral_v<T>, "iter::counter<T> must be of integral type");
 
-            counter(const value_type& s):
-                start{s}{}
+            counter(const value_type& _start, const value_type& _step):
+                start{_start},
+                step{_step}{}
 
             constexpr iterator begin()noexcept{
-                return iterator(start);
+                return iterator(start, step);
             }
             constexpr const_iterator begin()const noexcept{
-                return const_iterator(start);
+                return const_iterator(start, step);
             }
             constexpr iterator end()noexcept{
-                return iterator(std::numeric_limits<value_type>::max());
+                return iterator(std::numeric_limits<value_type>::max(), step);
             }
             constexpr const_iterator end()const noexcept{
-                return iterator(std::numeric_limits<value_type>::max());
+                return iterator(std::numeric_limits<value_type>::max(), step);
             }
 
             // reverse iterators
@@ -98,8 +100,8 @@ namespace iter{
     }
 
     template<typename T>
-    impl::counter<T> count(const T& start){
-        return impl::counter<T>(start);
+    impl::counter<T> count(const T& start, const T& step = 1){
+        return impl::counter<T>(start, step);
     }
 }
 
