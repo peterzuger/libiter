@@ -87,16 +87,16 @@ namespace iter{
 
             // const iterators
             constexpr const_iterator cbegin()const noexcept{
-                return cbegin();
+                return begin();
             }
             constexpr const_iterator cend()const noexcept{
-                return cend();
+                return end();
             }
             constexpr const_reverse_iterator crbegin()const noexcept{
-                return crbegin();
+                return rbegin();
             }
             constexpr const_reverse_iterator crend()const noexcept{
-                return crend();
+                return rend();
             }
         };
     }
